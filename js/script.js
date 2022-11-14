@@ -48,9 +48,15 @@ createApp({
                 this.activeSlide--;
             }
         },
+        changeSlide(index) {
+            this.activeSlide = index;
+        },
         stopInterval() {
             clearInterval(this.interval)
-          }      
+        },
+        autoPlay() {
+            this.interval = setInterval(this.nextImage, 3000)
+        },
     },
     mounted() {
         this.interval = setInterval(this.nextImage, 3000)
