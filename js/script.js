@@ -47,11 +47,12 @@ createApp({
             } else {
                 this.activeSlide--;
             }
-        }
+        },
+        stopInterval() {
+            clearInterval(this.interval)
+          }      
     },
     mounted() {
-        setInterval(() => {
-            this.nextImage()
-        }, 3000);
+        this.interval = setInterval(this.nextImage, 3000)
     }
 }).mount('#app')
