@@ -48,5 +48,10 @@ createApp({
                 this.activeSlide--;
             }
         }
+    },
+    mounted() {
+        setInterval(() => {
+            this.nextImage()
+        }, 3000);
     }
-  }).mount('#app')
+}).mount('#app')
