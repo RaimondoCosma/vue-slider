@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background-image: radial-gradient(circle, #e3e2c9, #dec584, #e5a144, #f1720b, #ff0000);
+}
+
 .container {
     height: 100vh;
     display: flex;
@@ -23,10 +27,13 @@
     height: 100%;
     position: absolute;
     opacity: 0;
+    transition: all 0.2s linear;
+    z-index: 1;
 }
 
 .item-active {
     opacity: 1;
+    animation: from-left 0.6s cubic-bezier(.45,.69,.31,1.27);
 }
 
 .item img {
@@ -37,10 +44,12 @@
 
 .item .text {
     position: absolute;
-    right: 20px;
+    right: 0;
     bottom: 20px;
     text-align: right;
     color: white;
+    padding: 5px 20px;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .thumbs {
@@ -112,4 +121,16 @@ oppure i caratteri ∧ (&and;) e ∨ (&or;)
     bottom: 35%;
     left: 50%;
     transform: translate(-50%) rotate(135deg);
+}
+
+/* ------------------------
+    KEYFRAME
+------------------------ */
+@keyframes from-left {
+    0% {
+        transform: translateX(-700px);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
