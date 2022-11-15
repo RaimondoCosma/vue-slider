@@ -48,8 +48,8 @@ createApp({
                 this.activeSlide--;
             }
         },
-        changeSlide(index) {
-            this.activeSlide = index;
+        changeSlide(i) {
+            this.activeSlide = i;
         },
         stopInterval() {
             clearInterval(this.interval)
