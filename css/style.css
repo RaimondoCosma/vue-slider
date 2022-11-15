@@ -45,6 +45,7 @@ body {
 .item .text {
     position: absolute;
     right: 0;
+    left: 0;
     bottom: 20px;
     text-align: right;
     color: white;
@@ -61,6 +62,7 @@ body {
 
 .thumb {
     height: calc((300px) / 5);
+    opacity: 0.5;
 }
 
 .thumb img {
