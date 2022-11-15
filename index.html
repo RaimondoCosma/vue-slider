@@ -19,6 +19,8 @@
 
                 <div class="item-container">
                     <div class="item" v-for="(slide, index) in slides" :class="activeSlide === index ? 'item-active' : ''">
+                    <!-- Stesso risultato utilizzando il metodo di assegnazione classe di vue -->
+                    <!-- <div class="item" v-for="(slide, index) in slides" :class="{'item-active': index === activeSlide}"> -->
                         <img :src="slide.image" :alt="slide.title" />
                         <div class="text">
                             <h3>{{slide.title}}</h3>
@@ -32,7 +34,7 @@
                 <div class="thumbs">
                     <div class="prev" @click="prevImage"></div>
                     <div class="next" @click="nextImage"></div>
-                    <div class="thumb" v-for="(thumb, index) in slides" @click="changeSlide(index)" :class="activeSlide === index ? 'active' : ''">
+                    <div class="thumb" v-for="(thumb, index) in slides" @click="changeSlide(index)" :class="{ active: index === activeSlide }">
                         <img :src="thumb.image" :alt="thumb.image"/>
                     </div>
                 </div>
